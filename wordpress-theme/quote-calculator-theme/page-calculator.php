@@ -11,8 +11,7 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main bg-gray-50 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-4 py-8 bg-gray-50 min-h-screen">
 
         <?php
         while ( have_posts() ) :
@@ -49,7 +48,6 @@ get_header();
         ?>
 
     </div>
-</main>
 
 <?php
 get_footer();
