@@ -1,0 +1,105 @@
+/*
+Theme Name: Quote Calculator Theme
+Theme URI: https://github.com/yourusername/quote-calculator-theme
+Author: Your Name
+Author URI: https://yourwebsite.com
+Description: A clean, modern WordPress theme with an integrated security system quote calculator. Features Tailwind CSS styling, responsive design, and easy-to-use calculator functionality via shortcode or page template.
+Version: 1.0.0
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: quote-calculator-theme
+Tags: calculator, business, one-column, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+/**
+ * Most styling is handled by Tailwind CSS loaded via CDN.
+ * Custom styles below for WordPress-specific elements.
+ */
+
+/* WordPress Core Alignment */
+.alignnone {
+    margin: 1.5em 1.5em 1.5em 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 1.5em auto;
+}
+
+.alignright {
+    float: right;
+    margin: 0.5em 0 1.5em 1.5em;
+}
+
+.alignleft {
+    float: left;
+    margin: 0.5em 1.5em 1.5em 0;
+}
+
+/* WordPress Image Captions */
+.wp-caption {
+    max-width: 100%;
+}
+
+.wp-caption-text {
+    text-align: center;
+    margin-top: 0.5em;
+    font-size: 0.875em;
+    color: #666;
+}
+
+/* WordPress Gallery */
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+/* Screen reader text */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+/* Hidden class for calculator */
+.hidden {
+    display: none !important;
+}
+
+/* Calculator wrapper */
+.quote-calculator-container {
+    max-width: 42rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
