@@ -8,8 +8,7 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-    <div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-4 py-8">
 
         <?php
         if ( have_posts() ) :
@@ -140,7 +139,6 @@ get_header();
         ?>
 
     </div>
-</main>
 
 <?php
 get_footer();

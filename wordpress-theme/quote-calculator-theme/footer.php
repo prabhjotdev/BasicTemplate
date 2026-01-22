@@ -6,6 +6,8 @@
  */
 ?>
 
+    </main><!-- #primary -->
+
     <footer id="colophon" class="site-footer bg-gray-900 text-white mt-12">
         <div class="container mx-auto px-4 py-8">
 
