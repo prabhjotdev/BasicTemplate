@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional security and smart home services in Ontario. Security cameras, smart home automation, video doorbells, WiFi solutions, networking, and home theater installation.">
+    <meta name="keywords" content="security services, smart home installation, video doorbell setup, WiFi installation, networking services, home theater, Ontario">
+    <title>Our Services - FI Technologies</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="FI Technologies Home">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="40" height="40" rx="8" fill="#00A8E8"/>
+                    <path d="M12 10H18V14H12V10Z" fill="white"/>
+                    <path d="M22 10H28V14H22V10Z" fill="white"/>
+                    <path d="M12 18H18V22H12V18Z" fill="white"/>
+                    <path d="M22 18H28V22H22V18Z" fill="white"/>
+                    <path d="M12 26H28V30H12V26Z" fill="white"/>
+                </svg>
+                <span>FI Technologies</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions (Desktop) -->
+            <div class="header-actions">
+                <button class="btn btn-sm btn-outline header-action-btn" data-action="call" data-phone="+16477999973" aria-label="Call us at +1 647-799-9973">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    Call
+                </button>
+                <button class="btn btn-sm btn-outline header-action-btn" data-action="email" data-email="info@fitechnologies.ca" aria-label="Email us at info@fitechnologies.ca">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    Email
+                </button>
+                <button class="btn btn-primary header-action-btn" data-action="open-quote">Get a Free Quote</button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" aria-label="Mobile Navigation">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></li>
+                <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li class="mobile-nav-item"><a href="reviews.html" class="mobile-nav-link">Reviews</a></li>
+                <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+                <button class="btn btn-primary btn-block" data-action="open-quote">Get a Free Quote</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Security & Smart Home Services</h1>
+                <p class="hero-subtitle">Expert installation and support for all your technology needs</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg" data-action="open-quote">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions tailored to your home and business</p>
+            </div>
+
+            <div class="grid grid-3">
+                <!-- Security Cameras -->
+                <div class="card" id="cameras">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                        <circle cx="12" cy="13" r="4"/>
+                    </svg>
+                    <h3 class="card-title">Security Cameras</h3>
+                    <div class="card-text">
+                        <ul>
+                            <li>Color night vision technology</li>
+                            <li>AI-powered detection (human, vehicle, face, license plate)</li>
+                            <li>Remote viewing via mobile app</li>
+                            <li>Weatherproof Canadian-rated equipment</li>
+                            <li>DVR and NVR systems</li>
+                            <li>Audio recording capabilities</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-action="open-quote" data-service="Security Cameras">Get Quote</button>
+                </div>
+
+                <!-- Smart Home Automation -->
+                <div class="card" id="automation">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <h3 class="card-title">Smart Home Automation</h3>
+                    <div class="card-text">
+                        <ul>
+                            <li>Smart lighting control systems</li>
+                            <li>Climate and thermostat automation</li>
+                            <li>Voice control integration</li>
+                            <li>Smart locks and access control</li>
+                            <li>Energy monitoring solutions</li>
+                            <li>Scene and schedule programming</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-action="open-quote" data-service="Smart Home Automation">Get Quote</button>
+                </div>
+
+                <!-- Video Door Bells -->
+                <div class="card" id="doorbells">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <circle cx="12" cy="14" r="4"/>
+                    </svg>
+                    <h3 class="card-title">Video Door Bells</h3>
+                    <div class="card-text">
+                        <ul>
+                            <li>HD video quality day and night</li>
+                            <li>Two-way audio communication</li>
+                            <li>Motion detection alerts</li>
+                            <li>Cloud and local storage options</li>
+                            <li>Mobile app notifications</li>
+                            <li>Integration with existing systems</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-action="open-quote" data-service="Video Door Bells">Get Quote</button>
+                </div>
+
+                <!-- WIFI Solutions -->
+                <div class="card" id="wifi">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M5 12.55a11 11 0 0114.08 0"/>
+                        <path d="M1.42 9a16 16 0 0121.16 0"/>
+                        <path d="M8.53 16.11a6 6 0 016.95 0"/>
+                        <line x1="12" y1="20" x2="12.01" y2="20"/>
+                    </svg>
+                    <h3 class="card-title">WIFI Solutions</h3>
+                    <div class="card-text">
+                        <ul>
+                            <li>Whole-home WiFi coverage</li>
+                            <li>Mesh network systems</li>
+                            <li>Commercial-grade access points</li>
+                            <li>Dead zone elimination</li>
+                            <li>Guest network configuration</li>
+                            <li>Network performance optimization</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-action="open-quote" data-service="WIFI Solutions">Get Quote</button>
+                </div>
+
+                <!-- Networking -->
+                <div class="card" id="networking">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                    </svg>
+                    <h3 class="card-title">Networking</h3>
+                    <div class="card-text">
+                        <ul>
+                            <li>Structured cabling installation</li>
+                            <li>Network switch configuration</li>
+                            <li>Router setup and optimization</li>
+                            <li>VPN and firewall setup</li>
+                            <li>Network security implementation</li>
+                            <li>Business network solutions</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-action="open-quote" data-service="Networking">Get Quote</button>
+                </div>
+
+                <!-- Home Theater Installation -->
+                <div class="card" id="theater">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
+                        <polyline points="17 2 12 7 7 2"/>
+                    </svg>
+                    <h3 class="card-title">Home Theater Installation</h3>
+                    <div class="card-text">
+                        <ul>
+                            <li>Surround sound system setup</li>
+                            <li>4K/8K TV mounting and calibration</li>
+                            <li>Projector and screen installation</li>
+                            <li>Media room design consultation</li>
+                            <li>Cable management and concealment</li>
+                            <li>Universal remote programming</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline" data-action="open-quote" data-service="Home Theater Installation">Get Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-subtitle">Get answers to common questions about our services</p>
+            </div>
+
+            <div class="faq-list">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How long does a typical installation take?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Installation time varies depending on the service and complexity. A typical 4-camera security system takes 4-6 hours. Smart home automation can range from a few hours to a full day depending on the number of devices. We provide detailed time estimates during your free consultation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I access my security cameras remotely?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes! All our camera systems include free lifetime mobile app access. You can view live footage, review recordings, and receive alerts on your smartphone or tablet from anywhere in the world with an internet connection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Will WiFi solutions work with my existing internet provider?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Absolutely! Our WiFi solutions are compatible with all major internet service providers in Ontario. We work with your existing modem and internet plan to optimize your WiFi coverage throughout your property.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you offer warranties on your installations?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes, we stand behind our work with comprehensive warranties. Equipment comes with manufacturer warranties (typically 1-3 years), and our installation labor is guaranteed. We also offer ongoing support and maintenance packages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can you install systems in both homes and businesses?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes! We serve both residential and commercial clients. Our team has experience with everything from single-family homes to large office buildings and retail locations. We tailor our solutions to meet the specific needs of each property type.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What makes your smart home systems different?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We focus on reliability, security, and ease of use. Unlike DIY solutions, our systems are professionally integrated to work seamlessly together. We use commercial-grade equipment when appropriate and provide comprehensive training so you can confidently control your smart home.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you provide ongoing technical support?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes! We're available 7 days a week from 9 AM to 9 PM for support. Whether you have questions, need troubleshooting help, or want to expand your system, our team is here to assist you. We also offer maintenance and upgrade services.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What areas do you service?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We proudly serve all of Ontario with a special focus on the Greater Toronto Area (GTA). This includes Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, and surrounding communities. Contact us to confirm service availability in your area.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today for a free consultation and quote. Our experts are ready to help you find the perfect solution for your needs.</p>
+            <div class="hero-actions">
+                <button class="btn btn-outline-white btn-lg" data-action="open-quote">Get a Free Quote</button>
+                <button class="btn btn-outline-white btn-lg" data-action="call" data-phone="+16477999973">Call: +1 647-799-9973</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>FI Technologies</h3>
+                    <p class="footer-text">Security Solutions For Your Home & Business. Professional installation and support across Ontario and GTA.</p>
+                    <button class="btn btn-primary" data-action="open-quote">Get a Free Quote</button>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="reviews.html" class="footer-link">Reviews</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html#cameras" class="footer-link">Security Cameras</a>
+                    <a href="services.html#automation" class="footer-link">Smart Home Automation</a>
+                    <a href="services.html#doorbells" class="footer-link">Video Door Bells</a>
+                    <a href="services.html#wifi" class="footer-link">WIFI Solutions</a>
+                    <a href="services.html#networking" class="footer-link">Networking</a>
+                    <a href="services.html#theater" class="footer-link">Home Theater</a>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        <div>
+                            <div>+1 647-799-9973</div>
+                            <div>1-647-701-2132</div>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <div>info@fitechnologies.ca</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <div>7 days a week<br>9:00 AM - 9:00 PM</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>Serving Ontario & GTA</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 FI Technologies. All rights reserved. Security Solutions For Your Home & Business.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Bar -->
+    <div class="mobile-bottom-bar">
+        <button class="mobile-bottom-btn" data-action="call" data-phone="+16477999973" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Call
+        </button>
+        <button class="mobile-bottom-btn primary" data-action="open-quote" aria-label="Get a free quote">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 11l3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+            Quote
+        </button>
+        <button class="mobile-bottom-btn" data-action="email" data-email="info@fitechnologies.ca" aria-label="Email us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Email
+        </button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <!-- Quote Modal -->
+    <div class="modal" id="quoteModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Get a Free Quote</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="quoteForm" novalidate>
+                    <div class="form-success">
+                        <strong>Thank you!</strong> Your request has been sent. We'll contact you shortly.
+                    </div>
+
+                    <div class="form-group">
+                        <label for="first_name" class="form-label required">First Name</label>
+                        <input type="text" id="first_name" name="first_name" class="form-input" required>
+                        <div class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last_name" class="form-label required">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" class="form-input" required>
+                        <div class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label required">Telephone</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" required>
+                        <div class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input">
+                        <div class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service" class="form-label required">Service Needed</label>
+                        <select id="service" name="service" class="form-select" required>
+                            <option value="">-- Select a Service --</option>
+                            <option value="Security Cameras">Security Cameras</option>
+                            <option value="Smart Home Automation">Smart Home Automation</option>
+                            <option value="Video Door Bells">Video Door Bells</option>
+                            <option value="WIFI Solutions">WIFI Solutions</option>
+                            <option value="Networking">Networking</option>
+                            <option value="Home Theater Installation">Home Theater Installation</option>
+                        </select>
+                        <div class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location" class="form-label required">City/Postal Code</label>
+                        <input type="text" id="location" name="location" class="form-input" required>
+                        <div class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label required">Preferred Contact Method</label>
+                        <div class="form-radio-group">
+                            <div class="form-radio">
+                                <input type="radio" id="contact_call" name="preferred_contact" value="Call" required>
+                                <label for="contact_call">Call</label>
+                            </div>
+                            <div class="form-radio">
+                                <input type="radio" id="contact_email" name="preferred_contact" value="Email" required>
+                                <label for="contact_email">Email</label>
+                            </div>
+                        </div>
+                        <div class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message/Details</label>
+                        <textarea id="message" name="message" class="form-textarea"></textarea>
+                        <div class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent" class="form-label required">I agree to be contacted by FI Technologies.</label>
+                        </div>
+                        <div class="form-error"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form.js"></script>
+    <script src="assets/js/ui.js"></script>
+</body>
+</html>
