@@ -1,0 +1,110 @@
+<!-- ============================================
+   FI TECHNOLOGIES - QUOTE MODAL V2
+   ============================================
+
+   ADD THIS AS A "CUSTOM HTML" BLOCK:
+   - At the bottom of every page (after footer, before JavaScript)
+   - This is the popup form triggered by "Get Free Quote" buttons
+
+   ============================================ -->
+
+<!-- Quote Modal -->
+<div class="fi-modal fi-site" id="fiQuoteModal" role="dialog" aria-labelledby="fiModalTitle" aria-modal="true">
+    <div class="fi-modal-backdrop"></div>
+    <div class="fi-modal-content">
+        <div class="fi-modal-header">
+            <h2 class="fi-modal-title" id="fiModalTitle">Get Your Free Quote</h2>
+            <button class="fi-modal-close" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="fi-modal-body">
+            <form id="fiQuoteForm" novalidate>
+                <div class="fi-form-success">
+                    <strong>Thank you!</strong> We'll contact you within 24 hours.
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_first_name" class="fi-form-label required">First Name</label>
+                    <input type="text" id="fi_first_name" name="first_name" class="fi-form-input" placeholder="John" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_last_name" class="fi-form-label required">Last Name</label>
+                    <input type="text" id="fi_last_name" name="last_name" class="fi-form-input" placeholder="Smith" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_phone" class="fi-form-label required">Phone Number</label>
+                    <input type="tel" id="fi_phone" name="phone" class="fi-form-input" placeholder="(647) 000-0000" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_email" class="fi-form-label">Email (Optional)</label>
+                    <input type="email" id="fi_email" name="email" class="fi-form-input" placeholder="john@example.com">
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_service" class="fi-form-label required">Service Needed</label>
+                    <select id="fi_service" name="service" class="fi-form-select" required>
+                        <option value="">Select a service...</option>
+                        <option value="Security Cameras">Security Cameras</option>
+                        <option value="Smart Home Automation">Smart Home Automation</option>
+                        <option value="Video Door Bells">Video Door Bells</option>
+                        <option value="WIFI Solutions">WiFi Solutions</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Home Theater Installation">Home Theater</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_location" class="fi-form-label required">City or Postal Code</label>
+                    <input type="text" id="fi_location" name="location" class="fi-form-input" placeholder="Toronto, ON" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label class="fi-form-label required">Preferred Contact Method</label>
+                    <div class="fi-form-radio-group">
+                        <label class="fi-form-radio">
+                            <input type="radio" name="preferred_contact" value="Call" required>
+                            <span>Call</span>
+                        </label>
+                        <label class="fi-form-radio">
+                            <input type="radio" name="preferred_contact" value="Email" required>
+                            <span>Email</span>
+                        </label>
+                        <label class="fi-form-radio">
+                            <input type="radio" name="preferred_contact" value="Text" required>
+                            <span>Text</span>
+                        </label>
+                    </div>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_message" class="fi-form-label">Additional Details (Optional)</label>
+                    <textarea id="fi_message" name="message" class="fi-form-textarea" placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <div class="fi-form-group">
+                    <label class="fi-form-checkbox">
+                        <input type="checkbox" name="consent" required>
+                        <span>I agree to be contacted by FI Technologies</span>
+                    </label>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <button type="submit" class="fi-btn fi-btn-primary fi-btn-block fi-btn-lg">Submit Request</button>
+
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: var(--fi-color-gray-light);">
+                    Or call us directly: <a href="tel:+16477999973" style="color: var(--fi-color-accent); font-weight: 600;">647-799-9973</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

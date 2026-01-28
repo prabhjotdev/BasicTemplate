@@ -1,0 +1,340 @@
+<!-- ============================================
+   FI TECHNOLOGIES - GLOBAL JAVASCRIPT V2
+   ============================================
+
+   ADD THIS AS A "CUSTOM HTML" BLOCK:
+   - At the VERY BOTTOM of every page (last block)
+
+   ============================================ -->
+
+<script>
+(function() {
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // ============================================
+        // Mobile Menu Toggle
+        // ============================================
+        var mobileToggle = document.querySelector('.fi-mobile-toggle');
+        var mobileNav = document.querySelector('.fi-mobile-nav');
+
+        if (mobileToggle && mobileNav) {
+            mobileToggle.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+                var isExpanded = mobileNav.classList.contains('active');
+                mobileToggle.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    mobileNav.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close when clicking nav links
+            var navLinks = mobileNav.querySelectorAll('.fi-mobile-nav-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileNav.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // ============================================
+        // Phone Call Action
+        // ============================================
+        var phoneButtons = document.querySelectorAll('[data-action="call"]');
+        phoneButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var phone = this.getAttribute('data-phone') || '+16477999973';
+                window.location.href = 'tel:' + phone;
+            });
+        });
+
+        // ============================================
+        // Email Action
+        // ============================================
+        var emailButtons = document.querySelectorAll('[data-action="email"]');
+        emailButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var email = this.getAttribute('data-email') || 'info@fitechnologies.ca';
+                window.location.href = 'mailto:' + email;
+            });
+        });
+
+        // ============================================
+        // Quote Modal
+        // ============================================
+        var modal = document.getElementById('fiQuoteModal');
+        var form = document.getElementById('fiQuoteForm');
+        var openButtons = document.querySelectorAll('[data-action="open-quote"]');
+        var closeBtn = modal ? modal.querySelector('.fi-modal-close') : null;
+        var backdrop = modal ? modal.querySelector('.fi-modal-backdrop') : null;
+
+        function openModal() {
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                var firstInput = modal.querySelector('input, select');
+                if (firstInput) setTimeout(function() { firstInput.focus(); }, 100);
+            }
+        }
+
+        function closeModal() {
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (form) {
+                    form.reset();
+                    clearErrors(form);
+                    var success = form.querySelector('.fi-form-success');
+                    if (success) success.classList.remove('active');
+                }
+            }
+        }
+
+        openButtons.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+                // Pre-select service if specified
+                var service = this.getAttribute('data-service');
+                if (service && form) {
+                    var select = form.querySelector('select[name="service"]');
+                    if (select) {
+                        setTimeout(function() { select.value = service; }, 100);
+                    }
+                }
+            });
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // ============================================
+        // Form Validation
+        // ============================================
+        function validateField(field) {
+            var value = field.value.trim();
+            var type = field.getAttribute('type');
+            var isRequired = field.hasAttribute('required');
+            var isValid = true;
+            var errorMsg = '';
+
+            if (isRequired) {
+                if (type === 'radio') {
+                    var name = field.getAttribute('name');
+                    var checked = document.querySelector('input[name="' + name + '"]:checked');
+                    if (!checked) {
+                        isValid = false;
+                        errorMsg = 'Please select an option';
+                    }
+                } else if (type === 'checkbox') {
+                    if (!field.checked) {
+                        isValid = false;
+                        errorMsg = 'This field is required';
+                    }
+                } else if (value === '') {
+                    isValid = false;
+                    errorMsg = 'This field is required';
+                }
+            }
+
+            if (type === 'email' && value !== '') {
+                var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRe.test(value)) {
+                    isValid = false;
+                    errorMsg = 'Please enter a valid email';
+                }
+            }
+
+            if (type === 'tel' && value !== '') {
+                var phoneRe = /^[\d\s\-\+\(\)]{10,}$/;
+                if (!phoneRe.test(value)) {
+                    isValid = false;
+                    errorMsg = 'Please enter a valid phone number';
+                }
+            }
+
+            showError(field, isValid, errorMsg);
+            return isValid;
+        }
+
+        function showError(field, isValid, msg) {
+            var group = field.closest('.fi-form-group');
+            if (!group) return;
+            var errorEl = group.querySelector('.fi-form-error');
+
+            if (isValid) {
+                field.classList.remove('error');
+                if (errorEl) errorEl.classList.remove('active');
+            } else {
+                field.classList.add('error');
+                if (errorEl) {
+                    errorEl.textContent = msg;
+                    errorEl.classList.add('active');
+                }
+            }
+        }
+
+        function clearErrors(form) {
+            form.querySelectorAll('.error').forEach(function(el) { el.classList.remove('error'); });
+            form.querySelectorAll('.fi-form-error.active').forEach(function(el) { el.classList.remove('active'); });
+        }
+
+        function validateForm(form) {
+            var valid = true;
+            var fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+            fields.forEach(function(field) {
+                if (!validateField(field)) valid = false;
+            });
+            return valid;
+        }
+
+        // Real-time validation
+        document.querySelectorAll('form').forEach(function(form) {
+            form.querySelectorAll('input, select, textarea').forEach(function(field) {
+                field.addEventListener('blur', function() {
+                    if (this.value.trim() !== '' || this.hasAttribute('required')) {
+                        validateField(this);
+                    }
+                });
+                field.addEventListener('input', function() {
+                    if (this.classList.contains('error')) validateField(this);
+                });
+            });
+        });
+
+        // Form Submit
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                if (!validateForm(this)) {
+                    var firstError = this.querySelector('.error');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstError.focus();
+                    }
+                    return;
+                }
+
+                var submitBtn = this.querySelector('button[type="submit"]');
+                var originalText = submitBtn ? submitBtn.textContent : '';
+
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                }
+
+                // Collect form data
+                var formData = new FormData(this);
+                var data = {};
+                formData.forEach(function(val, key) { data[key] = val; });
+                console.log('Form submission:', data);
+
+                // Simulate submission (replace with real endpoint)
+                setTimeout(function() {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+
+                    var success = form.querySelector('.fi-form-success');
+                    if (success) {
+                        success.classList.add('active');
+                        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    form.reset();
+                    clearErrors(form);
+
+                    // Close modal after delay
+                    setTimeout(closeModal, 2500);
+                }, 1500);
+            });
+        }
+
+        // ============================================
+        // Stat Counter Animation
+        // ============================================
+        function animateCounter(el, target, duration) {
+            duration = duration || 2000;
+            var start = 0;
+            var increment = target / (duration / 16);
+            var current = start;
+
+            var timer = setInterval(function() {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                if (target >= 1000) {
+                    el.textContent = Math.floor(current).toLocaleString() + '+';
+                } else if (target > 1) {
+                    el.textContent = Math.floor(current) + '+';
+                } else {
+                    el.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        var counters = document.querySelectorAll('.fi-trust-number[data-count]');
+        if (counters.length && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        var target = parseInt(entry.target.getAttribute('data-count'));
+                        if (!isNaN(target)) animateCounter(entry.target, target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(function(counter) { observer.observe(counter); });
+        }
+
+        // ============================================
+        // Active Nav Link
+        // ============================================
+        var path = window.location.pathname;
+        document.querySelectorAll('.fi-nav-link, .fi-mobile-nav-link').forEach(function(link) {
+            var href = link.getAttribute('href');
+            if (href && (path === href || (href !== '/' && path.indexOf(href) === 0))) {
+                link.classList.add('active');
+            }
+        });
+
+        // ============================================
+        // Smooth Scroll
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                var target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Console branding
+        console.log('%cFI Technologies', 'font-size: 24px; font-weight: bold; color: #ff6b35;');
+        console.log('%cSecurity Solutions For Your Home & Business', 'font-size: 14px; color: #8a8a8a;');
+        console.log('%c+1 647-799-9973', 'font-size: 16px; font-weight: bold; color: #00d4aa;');
+    });
+})();
+</script>
