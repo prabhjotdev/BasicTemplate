@@ -1,0 +1,242 @@
+<!-- ============================================
+   FI TECHNOLOGIES - CONTACT PAGE CONTENT
+   ============================================
+
+   This file contains all the content sections for the CONTACT page.
+
+   HOW TO USE IN WORDPRESS GUTENBERG:
+   1. Create a new page called "Contact"
+   2. Add a "Custom HTML" block for each section
+   3. Paste the HTML for each section into its own block
+
+   PAGE ORDER:
+   1. Header (from components/HEADER.html)
+   2. Hero Section
+   3. Contact Cards
+   4. Contact Form Section
+   5. Map Section
+   6. CTA Section
+   7. Footer (from components/FOOTER.html)
+   8. Mobile Bottom Bar (from components/MOBILE-BOTTOM-BAR.html)
+   9. Quote Modal (from components/QUOTE-MODAL.html)
+   10. Global JavaScript (from GLOBAL-JAVASCRIPT.html)
+
+   ============================================ -->
+
+<!-- ==================== HERO SECTION ==================== -->
+<!-- PASTE THIS INTO A CUSTOM HTML BLOCK -->
+
+<section class="fi-hero fi-site">
+    <div class="fi-container">
+        <div class="fi-hero-content">
+            <h1>Get in Touch</h1>
+            <p class="fi-hero-subtitle">We're here to help secure your property. Contact us for a free quote.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== CONTACT CARDS ==================== -->
+<!-- PASTE THIS INTO A CUSTOM HTML BLOCK -->
+
+<section class="fi-section fi-site">
+    <div class="fi-container">
+        <div class="fi-section-header">
+            <h2>Contact Information</h2>
+            <p class="fi-section-subtitle">Reach out to us through your preferred method</p>
+        </div>
+
+        <div class="fi-contact-cards">
+            <!-- Phone Card -->
+            <div class="fi-contact-card">
+                <svg class="fi-contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                <h3 class="fi-contact-card-title">Phone</h3>
+                <p class="fi-contact-card-text">
+                    <a href="tel:+16477999973">+1 647-799-9973</a><br>
+                    <a href="tel:16477012132">1-647-701-2132</a>
+                </p>
+            </div>
+
+            <!-- Email Card -->
+            <div class="fi-contact-card">
+                <svg class="fi-contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <h3 class="fi-contact-card-title">Email</h3>
+                <p class="fi-contact-card-text">
+                    <a href="mailto:info@fitechnologies.ca">info@fitechnologies.ca</a>
+                </p>
+            </div>
+
+            <!-- Hours Card -->
+            <div class="fi-contact-card">
+                <svg class="fi-contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <h3 class="fi-contact-card-title">Business Hours</h3>
+                <p class="fi-contact-card-text">
+                    7 Days a Week<br>
+                    9:00 AM - 9:00 PM EST
+                </p>
+            </div>
+
+            <!-- Service Area Card -->
+            <div class="fi-contact-card">
+                <svg class="fi-contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <h3 class="fi-contact-card-title">Service Area</h3>
+                <p class="fi-contact-card-text">
+                    Ontario & Greater Toronto Area<br>
+                    (Toronto, Mississauga, Brampton, Markham & More)
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== CONTACT FORM SECTION ==================== -->
+<!-- PASTE THIS INTO A CUSTOM HTML BLOCK -->
+
+<section class="fi-section fi-bg-light fi-site">
+    <div class="fi-container">
+        <div class="fi-section-header">
+            <h2>Send Us a Message</h2>
+            <p class="fi-section-subtitle">Fill out the form below and we'll get back to you as soon as possible</p>
+        </div>
+
+        <div style="max-width: 700px; margin: 0 auto;">
+            <form id="fiContactForm" novalidate>
+                <div class="fi-form-success">
+                    <strong>Thank you!</strong> Your message has been sent. We'll contact you shortly.
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_contact_first_name" class="fi-form-label required">First Name</label>
+                    <input type="text" id="fi_contact_first_name" name="first_name" class="fi-form-input" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_contact_last_name" class="fi-form-label required">Last Name</label>
+                    <input type="text" id="fi_contact_last_name" name="last_name" class="fi-form-input" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_contact_phone" class="fi-form-label required">Telephone</label>
+                    <input type="tel" id="fi_contact_phone" name="phone" class="fi-form-input" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_contact_email" class="fi-form-label">Email</label>
+                    <input type="email" id="fi_contact_email" name="email" class="fi-form-input">
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_contact_service" class="fi-form-label required">Service Needed</label>
+                    <select id="fi_contact_service" name="service" class="fi-form-select" required>
+                        <option value="">-- Select a Service --</option>
+                        <option value="Security Cameras">Security Cameras</option>
+                        <option value="Smart Home Automation">Smart Home Automation</option>
+                        <option value="Video Door Bells">Video Door Bells</option>
+                        <option value="WIFI Solutions">WIFI Solutions</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Home Theater Installation">Home Theater Installation</option>
+                    </select>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_contact_location" class="fi-form-label required">City/Postal Code</label>
+                    <input type="text" id="fi_contact_location" name="location" class="fi-form-input" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label class="fi-form-label required">Preferred Contact Method</label>
+                    <div class="fi-form-radio-group">
+                        <div class="fi-form-radio">
+                            <input type="radio" id="fi_contact_method_call" name="preferred_contact" value="Call" required>
+                            <label for="fi_contact_method_call">Call</label>
+                        </div>
+                        <div class="fi-form-radio">
+                            <input type="radio" id="fi_contact_method_email" name="preferred_contact" value="Email" required>
+                            <label for="fi_contact_method_email">Email</label>
+                        </div>
+                    </div>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_contact_message" class="fi-form-label">Message/Details</label>
+                    <textarea id="fi_contact_message" name="message" class="fi-form-textarea" placeholder="Tell us about your project or any questions you have..."></textarea>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <div class="fi-form-checkbox">
+                        <input type="checkbox" id="fi_contact_consent" name="consent" required>
+                        <label for="fi_contact_consent" class="fi-form-label required">I agree to be contacted by FI Technologies.</label>
+                    </div>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <button type="submit" class="fi-btn fi-btn-primary fi-btn-block fi-btn-lg">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== MAP SECTION ==================== -->
+<!-- PASTE THIS INTO A CUSTOM HTML BLOCK -->
+
+<section class="fi-section fi-site">
+    <div class="fi-container">
+        <div class="fi-section-header">
+            <h2>Our Service Area</h2>
+            <p class="fi-section-subtitle">Proudly serving Ontario and the Greater Toronto Area</p>
+        </div>
+
+        <div class="fi-map-container">
+            <!-- Google Maps Embed - Replace with your own or remove if not needed -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.2567253095886!2d-79.38318368450474!3d43.65322007912088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d68bf33a9b%3A0x15edd8c4de1c7581!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="FI Technologies Service Area Map">
+            </iframe>
+        </div>
+
+        <div class="fi-text-center fi-mt-xl">
+            <p style="font-size: 1.125rem; max-width: 700px; margin: 0 auto;">
+                We serve all of Ontario with special focus on the GTA including Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, Oakville, Burlington, Ajax, Scarborough, North York, Etobicoke, and surrounding areas.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== CTA SECTION ==================== -->
+<!-- PASTE THIS INTO A CUSTOM HTML BLOCK -->
+
+<section class="fi-cta-section fi-site">
+    <div class="fi-container">
+        <h2>Prefer to Talk Directly?</h2>
+        <p>Our team is available 7 days a week to answer your questions and provide expert guidance.</p>
+        <div class="fi-hero-actions">
+            <button class="fi-btn fi-btn-outline-white fi-btn-lg" data-action="call" data-phone="+16477999973">Call: +1 647-799-9973</button>
+            <button class="fi-btn fi-btn-outline-white fi-btn-lg" data-action="email" data-email="info@fitechnologies.ca">Email Us</button>
+        </div>
+    </div>
+</section>

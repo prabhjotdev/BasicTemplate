@@ -1,0 +1,102 @@
+<!-- ============================================
+   FI TECHNOLOGIES - QUOTE MODAL COMPONENT
+   ============================================
+
+   ADD THIS AS A "CUSTOM HTML" BLOCK:
+   - At the bottom of every page (after footer)
+   - This is the popup form triggered by "Get a Free Quote" buttons
+
+   ============================================ -->
+
+<!-- Quote Modal -->
+<div class="fi-modal" id="fiQuoteModal" role="dialog" aria-labelledby="fiModalTitle" aria-modal="true">
+    <div class="fi-modal-backdrop"></div>
+    <div class="fi-modal-content">
+        <div class="fi-modal-header">
+            <h2 class="fi-modal-title" id="fiModalTitle">Get a Free Quote</h2>
+            <button class="fi-modal-close" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="fi-modal-body">
+            <form id="fiQuoteForm" novalidate>
+                <div class="fi-form-success">
+                    <strong>Thank you!</strong> Your request has been sent. We'll contact you shortly.
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_first_name" class="fi-form-label required">First Name</label>
+                    <input type="text" id="fi_first_name" name="first_name" class="fi-form-input" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_last_name" class="fi-form-label required">Last Name</label>
+                    <input type="text" id="fi_last_name" name="last_name" class="fi-form-input" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_phone" class="fi-form-label required">Telephone</label>
+                    <input type="tel" id="fi_phone" name="phone" class="fi-form-input" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_email" class="fi-form-label">Email</label>
+                    <input type="email" id="fi_email" name="email" class="fi-form-input">
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_service" class="fi-form-label required">Service Needed</label>
+                    <select id="fi_service" name="service" class="fi-form-select" required>
+                        <option value="">-- Select a Service --</option>
+                        <option value="Security Cameras">Security Cameras</option>
+                        <option value="Smart Home Automation">Smart Home Automation</option>
+                        <option value="Video Door Bells">Video Door Bells</option>
+                        <option value="WIFI Solutions">WIFI Solutions</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Home Theater Installation">Home Theater Installation</option>
+                    </select>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_location" class="fi-form-label required">City/Postal Code</label>
+                    <input type="text" id="fi_location" name="location" class="fi-form-input" required>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label class="fi-form-label required">Preferred Contact Method</label>
+                    <div class="fi-form-radio-group">
+                        <div class="fi-form-radio">
+                            <input type="radio" id="fi_contact_call" name="preferred_contact" value="Call" required>
+                            <label for="fi_contact_call">Call</label>
+                        </div>
+                        <div class="fi-form-radio">
+                            <input type="radio" id="fi_contact_email" name="preferred_contact" value="Email" required>
+                            <label for="fi_contact_email">Email</label>
+                        </div>
+                    </div>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <label for="fi_message" class="fi-form-label">Message/Details</label>
+                    <textarea id="fi_message" name="message" class="fi-form-textarea"></textarea>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <div class="fi-form-group">
+                    <div class="fi-form-checkbox">
+                        <input type="checkbox" id="fi_consent" name="consent" required>
+                        <label for="fi_consent" class="fi-form-label required">I agree to be contacted by FI Technologies.</label>
+                    </div>
+                    <div class="fi-form-error"></div>
+                </div>
+
+                <button type="submit" class="fi-btn fi-btn-primary fi-btn-block fi-btn-lg">Submit Request</button>
+            </form>
+        </div>
+    </div>
+</div>

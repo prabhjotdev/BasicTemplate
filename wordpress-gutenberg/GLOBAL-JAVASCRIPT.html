@@ -1,0 +1,559 @@
+<!-- ============================================
+   FI TECHNOLOGIES - GLOBAL JAVASCRIPT
+   ============================================
+
+   ADD THIS AS A "CUSTOM HTML" BLOCK:
+   - At the bottom of EVERY page, OR
+   - In your theme's footer area, OR
+   - In a sitewide code injection area if available
+
+   ============================================ -->
+
+<script>
+(function() {
+    'use strict';
+
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // ============================================
+        // Mobile Menu Toggle
+        // ============================================
+        const mobileMenuToggle = document.querySelector('.fi-mobile-menu-toggle');
+        const mobileNav = document.querySelector('.fi-mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+                const isExpanded = mobileNav.classList.contains('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!mobileNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            const mobileNavLinks = mobileNav.querySelectorAll('.fi-mobile-nav-link');
+            mobileNavLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // ============================================
+        // Back to Top Button
+        // ============================================
+        const backToTopBtn = document.querySelector('.fi-back-to-top');
+
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // ============================================
+        // Stat Counter Animation
+        // ============================================
+        function animateCounter(element, target, duration) {
+            duration = duration || 2000;
+            var start = 0;
+            var increment = target / (duration / 16);
+            var current = start;
+
+            var timer = setInterval(function() {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+
+                if (target >= 1000) {
+                    element.textContent = Math.floor(current).toLocaleString() + '+';
+                } else {
+                    element.textContent = Math.floor(current) + '+';
+                }
+            }, 16);
+        }
+
+        var statNumbers = document.querySelectorAll('.fi-stat-number');
+
+        if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
+            var observerOptions = { threshold: 0.5 };
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        var targetValue = parseInt(entry.target.getAttribute('data-count'));
+                        animateCounter(entry.target, targetValue);
+                    }
+                });
+            }, observerOptions);
+
+            statNumbers.forEach(function(stat) {
+                observer.observe(stat);
+            });
+        }
+
+        // ============================================
+        // Phone Call Action
+        // ============================================
+        var phoneButtons = document.querySelectorAll('[data-action="call"]');
+
+        phoneButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var phoneNumber = this.getAttribute('data-phone') || '+16477999973';
+                window.location.href = 'tel:' + phoneNumber;
+            });
+        });
+
+        // ============================================
+        // Email Action
+        // ============================================
+        var emailButtons = document.querySelectorAll('[data-action="email"]');
+
+        emailButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var email = this.getAttribute('data-email') || 'info@fitechnologies.ca';
+                window.location.href = 'mailto:' + email;
+            });
+        });
+
+        // ============================================
+        // Quote Modal Management
+        // ============================================
+        var quoteModal = document.getElementById('fiQuoteModal');
+        var quoteForm = document.getElementById('fiQuoteForm');
+        var openModalButtons = document.querySelectorAll('[data-action="open-quote"]');
+        var closeModalButton = document.querySelector('.fi-modal-close');
+        var modalBackdrop = document.querySelector('.fi-modal-backdrop');
+
+        function openQuoteModal() {
+            if (quoteModal) {
+                quoteModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                var firstInput = quoteModal.querySelector('input, select, textarea');
+                if (firstInput) {
+                    setTimeout(function() { firstInput.focus(); }, 100);
+                }
+            }
+        }
+
+        function closeQuoteModal() {
+            if (quoteModal) {
+                quoteModal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (quoteForm) {
+                    quoteForm.reset();
+                    clearFormErrors(quoteForm);
+                    var successMessage = quoteForm.querySelector('.fi-form-success');
+                    if (successMessage) {
+                        successMessage.classList.remove('active');
+                    }
+                }
+            }
+        }
+
+        openModalButtons.forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                openQuoteModal();
+            });
+        });
+
+        if (closeModalButton) {
+            closeModalButton.addEventListener('click', closeQuoteModal);
+        }
+
+        if (modalBackdrop) {
+            modalBackdrop.addEventListener('click', closeQuoteModal);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && quoteModal && quoteModal.classList.contains('active')) {
+                closeQuoteModal();
+            }
+        });
+
+        // ============================================
+        // Form Validation
+        // ============================================
+        function validateField(field) {
+            var fieldName = field.getAttribute('name');
+            var fieldValue = field.value.trim();
+            var fieldType = field.getAttribute('type');
+            var isValid = true;
+            var errorMessage = '';
+
+            if (field.hasAttribute('required')) {
+                if (fieldType === 'radio') {
+                    var radioGroup = document.querySelectorAll('input[name="' + fieldName + '"]');
+                    var isChecked = Array.from(radioGroup).some(function(radio) { return radio.checked; });
+                    if (!isChecked) {
+                        isValid = false;
+                        errorMessage = 'Please select an option.';
+                    }
+                } else if (fieldType === 'checkbox') {
+                    if (!field.checked) {
+                        isValid = false;
+                        errorMessage = 'This field is required.';
+                    }
+                } else if (fieldValue === '') {
+                    isValid = false;
+                    errorMessage = 'This field is required.';
+                }
+            }
+
+            if (fieldType === 'email' && fieldValue !== '') {
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(fieldValue)) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid email address.';
+                }
+            }
+
+            if (fieldType === 'tel' && fieldValue !== '') {
+                var phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+                if (!phoneRegex.test(fieldValue)) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid phone number.';
+                }
+            }
+
+            displayFieldError(field, isValid, errorMessage);
+            return isValid;
+        }
+
+        function displayFieldError(field, isValid, errorMessage) {
+            var formGroup = field.closest('.fi-form-group');
+            if (!formGroup) return;
+            var errorElement = formGroup.querySelector('.fi-form-error');
+
+            if (isValid) {
+                field.classList.remove('error');
+                if (errorElement) {
+                    errorElement.classList.remove('active');
+                }
+            } else {
+                field.classList.add('error');
+                if (errorElement) {
+                    errorElement.textContent = errorMessage;
+                    errorElement.classList.add('active');
+                }
+            }
+        }
+
+        function clearFormErrors(form) {
+            var errorFields = form.querySelectorAll('.error');
+            var errorMessages = form.querySelectorAll('.fi-form-error.active');
+            errorFields.forEach(function(field) { field.classList.remove('error'); });
+            errorMessages.forEach(function(msg) { msg.classList.remove('active'); });
+        }
+
+        function validateForm(form) {
+            var isFormValid = true;
+            var fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+
+            fields.forEach(function(field) {
+                if (!validateField(field)) {
+                    isFormValid = false;
+                }
+            });
+
+            var radioGroups = {};
+            form.querySelectorAll('input[type="radio"][required]').forEach(function(radio) {
+                var name = radio.getAttribute('name');
+                if (!radioGroups[name]) {
+                    radioGroups[name] = radio;
+                }
+            });
+
+            Object.values(radioGroups).forEach(function(radio) {
+                if (!validateField(radio)) {
+                    isFormValid = false;
+                }
+            });
+
+            return isFormValid;
+        }
+
+        // Real-time validation
+        var allForms = document.querySelectorAll('form');
+        allForms.forEach(function(form) {
+            var fields = form.querySelectorAll('input, select, textarea');
+            fields.forEach(function(field) {
+                field.addEventListener('blur', function() {
+                    if (this.value.trim() !== '' || this.hasAttribute('required')) {
+                        validateField(this);
+                    }
+                });
+                field.addEventListener('input', function() {
+                    if (this.classList.contains('error')) {
+                        validateField(this);
+                    }
+                });
+            });
+        });
+
+        // ============================================
+        // Form Submission
+        // ============================================
+        function handleFormSubmit(form, e) {
+            e.preventDefault();
+
+            if (!validateForm(form)) {
+                var firstError = form.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.focus();
+                }
+                return;
+            }
+
+            var formData = new FormData(form);
+            var data = {};
+            formData.forEach(function(value, key) {
+                data[key] = value;
+            });
+
+            var submitButton = form.querySelector('button[type="submit"]');
+            var originalButtonText = submitButton ? submitButton.textContent : '';
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
+
+            console.log('Form submission data:', data);
+
+            // Simulate network delay (replace with actual form submission)
+            setTimeout(function() {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }
+
+                var successMessage = form.querySelector('.fi-form-success');
+                if (successMessage) {
+                    successMessage.classList.add('active');
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                form.reset();
+                clearFormErrors(form);
+
+                if (form.id === 'fiQuoteForm' && quoteModal) {
+                    setTimeout(function() {
+                        closeQuoteModal();
+                    }, 2000);
+                }
+
+                if (form.id === 'fiContactForm') {
+                    setTimeout(function() {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 3000);
+                }
+            }, 1500);
+        }
+
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', function(e) {
+                handleFormSubmit(this, e);
+            });
+        }
+
+        var contactForm = document.getElementById('fiContactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                handleFormSubmit(this, e);
+            });
+        }
+
+        // ============================================
+        // Service Selection from Cards
+        // ============================================
+        var serviceCardButtons = document.querySelectorAll('[data-service]');
+
+        serviceCardButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var serviceName = this.getAttribute('data-service');
+                openQuoteModal();
+
+                if (quoteForm) {
+                    var serviceSelect = quoteForm.querySelector('select[name="service"]');
+                    if (serviceSelect && serviceName) {
+                        setTimeout(function() {
+                            serviceSelect.value = serviceName;
+                        }, 100);
+                    }
+                }
+            });
+        });
+
+        // ============================================
+        // Testimonial Slider
+        // ============================================
+        var sliders = document.querySelectorAll('.fi-testimonial-slider');
+
+        sliders.forEach(function(slider) {
+            var track = slider.querySelector('.fi-testimonial-track');
+            var slides = slider.querySelectorAll('.fi-testimonial-slide');
+            var prevBtn = slider.querySelector('.fi-slider-btn-prev');
+            var nextBtn = slider.querySelector('.fi-slider-btn-next');
+
+            if (!track || slides.length === 0) return;
+
+            var currentIndex = 0;
+            var totalSlides = slides.length;
+
+            function updateSlider() {
+                var offset = -currentIndex * 100;
+                track.style.transform = 'translateX(' + offset + '%)';
+
+                if (prevBtn) {
+                    prevBtn.disabled = currentIndex === 0;
+                }
+                if (nextBtn) {
+                    nextBtn.disabled = currentIndex === totalSlides - 1;
+                }
+            }
+
+            function nextSlide() {
+                if (currentIndex < totalSlides - 1) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            }
+
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', nextSlide);
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', prevSlide);
+            }
+
+            slider.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+
+            // Touch/swipe support
+            var touchStartX = 0;
+            var touchEndX = 0;
+
+            slider.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            slider.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                var swipeThreshold = 50;
+                var diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+            });
+
+            updateSlider();
+        });
+
+        // ============================================
+        // FAQ Accordion
+        // ============================================
+        var faqItems = document.querySelectorAll('.fi-faq-item');
+
+        faqItems.forEach(function(item) {
+            var question = item.querySelector('.fi-faq-question');
+            var answer = item.querySelector('.fi-faq-answer');
+
+            if (!question || !answer) return;
+
+            question.addEventListener('click', function() {
+                var isActive = item.classList.contains('active');
+
+                // Close all other FAQ items
+                faqItems.forEach(function(otherItem) {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        var otherQuestion = otherItem.querySelector('.fi-faq-question');
+                        if (otherQuestion) {
+                            otherQuestion.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+
+                item.classList.toggle('active');
+                question.setAttribute('aria-expanded', !isActive);
+
+                if (!isActive) {
+                    setTimeout(function() {
+                        item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 300);
+                }
+            });
+
+            question.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+
+            question.setAttribute('aria-expanded', 'false');
+        });
+
+        // ============================================
+        // Active Nav Link
+        // ============================================
+        var currentPath = window.location.pathname;
+        var navLinks = document.querySelectorAll('.fi-nav-link, .fi-mobile-nav-link');
+
+        navLinks.forEach(function(link) {
+            var href = link.getAttribute('href');
+            if (href && currentPath.indexOf(href) !== -1) {
+                link.classList.add('active');
+            }
+        });
+
+        // Add mobile bar class to body
+        if (document.querySelector('.fi-mobile-bottom-bar')) {
+            document.body.classList.add('fi-has-mobile-bar');
+        }
+
+        console.log('%cFI Technologies', 'font-size: 24px; font-weight: bold; color: #00A8E8;');
+        console.log('%cSecurity Solutions For Your Home & Business', 'font-size: 14px; color: #0A1F44;');
+    });
+})();
+</script>
