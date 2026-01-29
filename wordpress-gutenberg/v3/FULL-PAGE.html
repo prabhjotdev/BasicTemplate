@@ -1,0 +1,1171 @@
+<!-- ============================================
+   FICCTV - COMPLETE SINGLE PAGE WEBSITE
+   Version 3.0 - WordPress Gutenberg Ready
+   ============================================
+
+   HOW TO USE:
+   1. Add CSS to Appearance > Additional CSS
+   2. Create ONE page in WordPress
+   3. Paste each section below as separate "Custom HTML" blocks
+   4. Order matters! Paste in the order shown
+
+   SECTIONS IN ORDER:
+   1. HEAD (Tailwind CDN) - REQUIRED FIRST
+   2. HEADER
+   3. HERO
+   4. TRUST BAR
+   5. SERVICES
+   6. HOW IT WORKS
+   7. WHY CHOOSE US
+   8. GALLERY
+   9. TESTIMONIALS
+   10. FAQ
+   11. CONTACT
+   12. FOOTER
+   13. FLOATING BUTTONS
+   14. MOBILE BAR
+   15. QUOTE MODAL
+   16. JAVASCRIPT - REQUIRED LAST
+
+   ============================================ -->
+
+
+<!-- ==================== 1. HEAD (TAILWIND CDN) ==================== -->
+<!-- PASTE THIS AS FIRST CUSTOM HTML BLOCK -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                navy: '#0f172a',
+                charcoal: '#1e293b',
+                slate: '#334155',
+            }
+        }
+    }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+<!-- ==================== 2. HEADER ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<!-- Top Contact Bar -->
+<div class="bg-gradient-to-r from-orange-600 to-orange-500 py-2">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm font-semibold text-white">
+        <a href="tel:+16477999973" class="flex items-center gap-2 hover:opacity-80 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            647-799-9973
+        </a>
+        <span class="hidden sm:block w-px h-4 bg-white/30"></span>
+        <a href="mailto:info@ficctv.ca" class="flex items-center gap-2 hover:opacity-80 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            info@ficctv.ca
+        </a>
+        <span class="hidden sm:block w-px h-4 bg-white/30"></span>
+        <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Open 7 Days: 9AM-9PM
+        </span>
+    </div>
+</div>
+
+<!-- Main Header -->
+<header class="sticky top-0 bg-navy/95 backdrop-blur-md border-b border-slate/50 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 text-white font-bold text-xl hover:text-orange-500 transition">
+            <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+            </div>
+            <span>FICCTV</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8">
+            <a href="#services" class="text-gray-300 hover:text-white font-medium transition">Services</a>
+            <a href="#how-it-works" class="text-gray-300 hover:text-white font-medium transition">How It Works</a>
+            <a href="#gallery" class="text-gray-300 hover:text-white font-medium transition">Gallery</a>
+            <a href="#testimonials" class="text-gray-300 hover:text-white font-medium transition">Reviews</a>
+            <a href="#faq" class="text-gray-300 hover:text-white font-medium transition">FAQ</a>
+            <a href="#contact" class="text-gray-300 hover:text-white font-medium transition">Contact</a>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:flex items-center gap-4">
+            <a href="tel:+16477999973" class="flex items-center gap-2 text-white font-bold">
+                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                647-799-9973
+            </a>
+            <button data-action="open-quote" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-5 py-2.5 rounded-full transition transform hover:scale-105">
+                Free Quote
+            </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden text-white p-2">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav id="mobileMenu" class="hidden lg:hidden bg-charcoal border-t border-slate">
+        <div class="px-4 py-4 space-y-2">
+            <a href="#services" class="block py-3 px-4 text-white font-medium hover:bg-slate rounded-lg transition">Services</a>
+            <a href="#how-it-works" class="block py-3 px-4 text-white font-medium hover:bg-slate rounded-lg transition">How It Works</a>
+            <a href="#gallery" class="block py-3 px-4 text-white font-medium hover:bg-slate rounded-lg transition">Gallery</a>
+            <a href="#testimonials" class="block py-3 px-4 text-white font-medium hover:bg-slate rounded-lg transition">Reviews</a>
+            <a href="#faq" class="block py-3 px-4 text-white font-medium hover:bg-slate rounded-lg transition">FAQ</a>
+            <a href="#contact" class="block py-3 px-4 text-white font-medium hover:bg-slate rounded-lg transition">Contact</a>
+            <div class="pt-4 space-y-3">
+                <button data-action="open-quote" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 rounded-full">
+                    Get Free Quote
+                </button>
+                <a href="tel:+16477999973" class="flex items-center justify-center gap-2 w-full border-2 border-green-500 text-green-500 font-semibold py-3 rounded-full">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- ==================== 3. HERO ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img
+            src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1920&q=80"
+            alt="Security camera monitoring"
+            class="w-full h-full object-cover"
+        >
+        <div class="fc-hero-overlay"></div>
+    </div>
+
+    <!-- Accent Glow -->
+    <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-radial from-orange-500/20 to-transparent blur-3xl"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-20 text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/50 text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-8">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Professional CCTV Installation
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
+            Your Eyes When<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">You're Away</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+            Professional security camera installation for homes and businesses across Ontario. 4K resolution, night vision, and 24/7 mobile access.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <button data-action="open-quote" class="fc-btn-glow bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-full text-lg transition transform hover:scale-105 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+                Get Free Quote
+            </button>
+            <a href="tel:+16477999973" class="border-2 border-white text-white hover:bg-white hover:text-navy font-bold px-8 py-4 rounded-full text-lg transition flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                Call Now
+            </a>
+        </div>
+
+        <!-- Phone Number Large -->
+        <div class="flex items-center justify-center gap-3 text-2xl sm:text-3xl font-bold text-white">
+            <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            <a href="tel:+16477999973" class="hover:text-orange-400 transition">+1 647-799-9973</a>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-8 h-8 text-white/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+    </div>
+</section>
+
+
+<!-- ==================== 4. TRUST BAR ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section class="bg-gradient-to-r from-charcoal via-slate/50 to-charcoal border-y border-slate/50 py-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl sm:text-5xl font-black text-orange-500 mb-2 fc-stat-number" data-count="15">15+</div>
+                <div class="text-gray-400 font-medium uppercase tracking-wide text-sm">Years Experience</div>
+            </div>
+            <div>
+                <div class="text-4xl sm:text-5xl font-black text-orange-500 mb-2 fc-stat-number" data-count="1000">1000+</div>
+                <div class="text-gray-400 font-medium uppercase tracking-wide text-sm">Cameras Installed</div>
+            </div>
+            <div>
+                <div class="text-4xl sm:text-5xl font-black text-orange-500 mb-2">4K</div>
+                <div class="text-gray-400 font-medium uppercase tracking-wide text-sm">HD Resolution</div>
+            </div>
+            <div>
+                <div class="text-4xl sm:text-5xl font-black text-orange-500 mb-2">24/7</div>
+                <div class="text-gray-400 font-medium uppercase tracking-wide text-sm">Mobile Access</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== 5. SERVICES ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section id="services" class="bg-navy py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span class="text-orange-500 font-bold uppercase tracking-wider text-sm">What We Offer</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
+                Our <span class="text-orange-500">Services</span>
+            </h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Professional CCTV installation and security solutions for residential and commercial properties
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Service 1: Residential -->
+            <div class="fc-service-card bg-charcoal border border-slate rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Residential CCTV</h3>
+                <p class="text-gray-400 mb-6">Protect your home and family with professional-grade security cameras. 4K resolution, color night vision, and mobile app access.</p>
+                <button data-action="open-quote" data-service="Residential CCTV" class="text-orange-500 font-semibold hover:text-orange-400 transition flex items-center gap-2">
+                    Get Quote
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Service 2: Commercial -->
+            <div class="fc-service-card bg-charcoal border border-slate rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="2" y="7" width="20" height="14" rx="2"/>
+                        <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Commercial CCTV</h3>
+                <p class="text-gray-400 mb-6">Secure your business with enterprise-level surveillance. Multi-camera systems, AI detection, and remote monitoring solutions.</p>
+                <button data-action="open-quote" data-service="Commercial CCTV" class="text-orange-500 font-semibold hover:text-orange-400 transition flex items-center gap-2">
+                    Get Quote
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Service 3: IP Cameras -->
+            <div class="fc-service-card bg-charcoal border border-slate rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                        <circle cx="12" cy="13" r="4"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">IP Camera Systems</h3>
+                <p class="text-gray-400 mb-6">Advanced network-based cameras with 4K resolution, AI-powered detection for humans, vehicles, and license plates.</p>
+                <button data-action="open-quote" data-service="IP Camera Systems" class="text-orange-500 font-semibold hover:text-orange-400 transition flex items-center gap-2">
+                    Get Quote
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Service 4: DVR/NVR -->
+            <div class="fc-service-card bg-charcoal border border-slate rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="2" y="6" width="20" height="12" rx="2"/>
+                        <circle cx="12" cy="12" r="2"/>
+                        <path d="M6 12h.01M18 12h.01"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">DVR/NVR Systems</h3>
+                <p class="text-gray-400 mb-6">Recording solutions with large storage capacity. Keep footage on-site or in the cloud with easy playback and backup options.</p>
+                <button data-action="open-quote" data-service="DVR/NVR Systems" class="text-orange-500 font-semibold hover:text-orange-400 transition flex items-center gap-2">
+                    Get Quote
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Service 5: Night Vision -->
+            <div class="fc-service-card bg-charcoal border border-slate rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Color Night Vision</h3>
+                <p class="text-gray-400 mb-6">See clearly in complete darkness with advanced color night vision technology. Full-color footage 24/7, rain or shine.</p>
+                <button data-action="open-quote" data-service="Night Vision Cameras" class="text-orange-500 font-semibold hover:text-orange-400 transition flex items-center gap-2">
+                    Get Quote
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Service 6: Remote Monitoring -->
+            <div class="fc-service-card bg-charcoal border border-slate rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="5" y="2" width="14" height="20" rx="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Mobile App Access</h3>
+                <p class="text-gray-400 mb-6">Monitor your property from anywhere in the world. Free mobile app with live view, playback, and instant motion alerts.</p>
+                <button data-action="open-quote" data-service="Remote Monitoring" class="text-orange-500 font-semibold hover:text-orange-400 transition flex items-center gap-2">
+                    Get Quote
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== 6. HOW IT WORKS ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section id="how-it-works" class="bg-charcoal py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span class="text-orange-500 font-bold uppercase tracking-wider text-sm">Simple Process</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
+                How It <span class="text-orange-500">Works</span>
+            </h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Getting professional CCTV installed is easy with our simple 3-step process
+            </p>
+        </div>
+
+        <!-- Steps -->
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+            <!-- Step 1 -->
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto mb-6">
+                    1
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Free Consultation</h3>
+                <p class="text-gray-400">
+                    Call us or fill out our form. We'll discuss your needs, property layout, and provide a free no-obligation quote.
+                </p>
+            </div>
+
+            <!-- Connector (hidden on mobile) -->
+            <div class="hidden md:block absolute left-1/3 right-1/3 top-1/2 h-0.5 bg-gradient-to-r from-orange-500/50 to-orange-500/50"></div>
+
+            <!-- Step 2 -->
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto mb-6">
+                    2
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Professional Installation</h3>
+                <p class="text-gray-400">
+                    Our certified technicians install your system with precision. Clean cable management and optimal camera placement.
+                </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto mb-6">
+                    3
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Setup & Training</h3>
+                <p class="text-gray-400">
+                    We configure your mobile app, show you how everything works, and provide ongoing support whenever you need it.
+                </p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-12">
+            <button data-action="open-quote" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-full text-lg transition transform hover:scale-105">
+                Start With Free Quote
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== 7. WHY CHOOSE US ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section class="bg-navy py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span class="text-orange-500 font-bold uppercase tracking-wider text-sm">Why FICCTV</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
+                The <span class="text-orange-500">Difference</span>
+            </h2>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center p-6">
+                <div class="w-20 h-20 border-2 border-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">15+ Years Experience</h3>
+                <p class="text-gray-400 text-sm">Trusted by over 1000 clients across Ontario</p>
+            </div>
+
+            <div class="text-center p-6">
+                <div class="w-20 h-20 border-2 border-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">7 Days Support</h3>
+                <p class="text-gray-400 text-sm">Available 9AM-9PM, every day of the week</p>
+            </div>
+
+            <div class="text-center p-6">
+                <div class="w-20 h-20 border-2 border-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="5" y="2" width="14" height="20" rx="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Free Mobile App</h3>
+                <p class="text-gray-400 text-sm">Lifetime access to monitor from anywhere</p>
+            </div>
+
+            <div class="text-center p-6">
+                <div class="w-20 h-20 border-2 border-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M14 9V5a3 3 0 00-6 0v4"/>
+                        <rect x="2" y="9" width="20" height="12" rx="2"/>
+                        <circle cx="12" cy="15" r="1"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Canadian Weatherproof</h3>
+                <p class="text-gray-400 text-sm">Built to withstand harsh winters and summers</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== 8. GALLERY ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section id="gallery" class="bg-charcoal py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span class="text-orange-500 font-bold uppercase tracking-wider text-sm">Our Work</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
+                Installation <span class="text-orange-500">Gallery</span>
+            </h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                See examples of our professional CCTV installations
+            </p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="aspect-square rounded-xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" alt="Security camera installation" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="aspect-square rounded-xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=600&q=80" alt="CCTV camera" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="aspect-square rounded-xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Surveillance system" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="aspect-square rounded-xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1555355643-e94c3b47c157?auto=format&fit=crop&w=600&q=80" alt="Security monitoring" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== 9. TESTIMONIALS ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section id="testimonials" class="bg-navy py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span class="text-orange-500 font-bold uppercase tracking-wider text-sm">Testimonials</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
+                What Clients <span class="text-orange-500">Say</span>
+            </h2>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Testimonial 1 -->
+            <div class="fc-testimonial-card bg-charcoal border border-slate rounded-2xl p-8 relative">
+                <div class="text-yellow-400 text-xl mb-4">★★★★★</div>
+                <p class="text-gray-300 mb-6 relative z-10">
+                    "FICCTV installed cameras around my house. The picture quality is incredible - I can see everything clearly even at night. The mobile app works great!"
+                </p>
+                <div>
+                    <div class="font-bold text-white">Michael R.</div>
+                    <div class="text-gray-500 text-sm">Toronto, ON</div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="fc-testimonial-card bg-charcoal border border-slate rounded-2xl p-8 relative">
+                <div class="text-yellow-400 text-xl mb-4">★★★★★</div>
+                <p class="text-gray-300 mb-6 relative z-10">
+                    "Professional installation for my business. The AI detection features are amazing - I get alerts only when there's actual activity. Highly recommend!"
+                </p>
+                <div>
+                    <div class="font-bold text-white">Sarah K.</div>
+                    <div class="text-gray-500 text-sm">Mississauga, ON</div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="fc-testimonial-card bg-charcoal border border-slate rounded-2xl p-8 relative">
+                <div class="text-yellow-400 text-xl mb-4">★★★★★</div>
+                <p class="text-gray-300 mb-6 relative z-10">
+                    "Great service from start to finish. They were on time, clean, and explained everything perfectly. The color night vision is a game changer!"
+                </p>
+                <div>
+                    <div class="font-bold text-white">John D.</div>
+                    <div class="text-gray-500 text-sm">Brampton, ON</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== 10. FAQ ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section id="faq" class="bg-charcoal py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span class="text-orange-500 font-bold uppercase tracking-wider text-sm">FAQ</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-4">
+                Common <span class="text-orange-500">Questions</span>
+            </h2>
+        </div>
+
+        <!-- FAQ List -->
+        <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="fc-faq-item bg-navy border border-slate rounded-xl overflow-hidden">
+                <button class="fc-faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                    <span class="font-semibold text-white">How long does installation take?</span>
+                    <svg class="fc-faq-icon w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="fc-faq-answer">
+                    <div class="px-6 pb-5 text-gray-400">
+                        Most residential installations (4-8 cameras) take 4-6 hours. Commercial projects may take 1-2 days depending on the number of cameras and complexity.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="fc-faq-item bg-navy border border-slate rounded-xl overflow-hidden">
+                <button class="fc-faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                    <span class="font-semibold text-white">Can I view cameras on my phone?</span>
+                    <svg class="fc-faq-icon w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="fc-faq-answer">
+                    <div class="px-6 pb-5 text-gray-400">
+                        Yes! All our systems include free mobile app access. View live footage, playback recordings, and receive motion alerts from anywhere in the world.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="fc-faq-item bg-navy border border-slate rounded-xl overflow-hidden">
+                <button class="fc-faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                    <span class="font-semibold text-white">Do cameras work in the dark?</span>
+                    <svg class="fc-faq-icon w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="fc-faq-answer">
+                    <div class="px-6 pb-5 text-gray-400">
+                        Absolutely! Our cameras feature advanced color night vision technology, providing full-color footage even in complete darkness. You'll see clearly 24/7.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="fc-faq-item bg-navy border border-slate rounded-xl overflow-hidden">
+                <button class="fc-faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                    <span class="font-semibold text-white">What areas do you service?</span>
+                    <svg class="fc-faq-icon w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="fc-faq-answer">
+                    <div class="px-6 pb-5 text-gray-400">
+                        We serve the entire Greater Toronto Area (GTA) including Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, and surrounding communities.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="fc-faq-item bg-navy border border-slate rounded-xl overflow-hidden">
+                <button class="fc-faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                    <span class="font-semibold text-white">Are there monthly fees?</span>
+                    <svg class="fc-faq-icon w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="fc-faq-answer">
+                    <div class="px-6 pb-5 text-gray-400">
+                        No monthly fees! Your recordings are stored locally on your DVR/NVR. The mobile app is free forever. Cloud storage is optional if you want it.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== 11. CONTACT ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<section id="contact" class="bg-gradient-to-br from-orange-600 to-orange-700 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Text -->
+            <div class="text-center lg:text-left">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
+                    Ready to Secure Your Property?
+                </h2>
+                <p class="text-white/90 text-lg mb-8">
+                    Get a free, no-obligation quote today. Our team is available 7 days a week to answer your questions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="tel:+16477999973" class="bg-white text-orange-600 hover:bg-gray-100 font-bold px-8 py-4 rounded-full text-lg transition flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        647-799-9973
+                    </a>
+                    <a href="mailto:info@ficctv.ca" class="border-2 border-white text-white hover:bg-white hover:text-orange-600 font-bold px-8 py-4 rounded-full text-lg transition flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Email Us
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Info Cards -->
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                    <svg class="w-10 h-10 text-white mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    <div class="text-white font-bold">Phone</div>
+                    <div class="text-white/80">647-799-9973</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                    <svg class="w-10 h-10 text-white mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    <div class="text-white font-bold">Email</div>
+                    <div class="text-white/80">info@ficctv.ca</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                    <svg class="w-10 h-10 text-white mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <div class="text-white font-bold">Hours</div>
+                    <div class="text-white/80">9AM - 9PM, 7 Days</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                    <svg class="w-10 h-10 text-white mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <div class="text-white font-bold">Service Area</div>
+                    <div class="text-white/80">GTA & Ontario</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== 12. FOOTER ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<footer class="bg-navy border-t border-slate/50 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <!-- Brand -->
+            <div>
+                <div class="flex items-center gap-3 text-white font-bold text-xl mb-4">
+                    <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                    </div>
+                    FICCTV
+                </div>
+                <p class="text-gray-400 mb-4">
+                    Professional CCTV installation for homes and businesses. Your eyes when you're away.
+                </p>
+                <button data-action="open-quote" class="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-5 py-2.5 rounded-full text-sm">
+                    Get Free Quote
+                </button>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition">Services</a></li>
+                    <li><a href="#how-it-works" class="text-gray-400 hover:text-orange-500 transition">How It Works</a></li>
+                    <li><a href="#gallery" class="text-gray-400 hover:text-orange-500 transition">Gallery</a></li>
+                    <li><a href="#testimonials" class="text-gray-400 hover:text-orange-500 transition">Reviews</a></li>
+                    <li><a href="#faq" class="text-gray-400 hover:text-orange-500 transition">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-bold mb-4">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition">Residential CCTV</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition">Commercial CCTV</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition">IP Camera Systems</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition">DVR/NVR Systems</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition">Night Vision</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="text-white font-bold mb-4">Contact</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-400">
+                        <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        647-799-9973
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-400">
+                        <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        info@ficctv.ca
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-400">
+                        <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        9AM - 9PM, 7 Days
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-400">
+                        <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        GTA & Ontario
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="border-t border-slate/50 pt-8 text-center text-gray-500 text-sm">
+            &copy; 2026 FICCTV. All rights reserved. Professional CCTV Installation.
+        </div>
+    </div>
+</footer>
+
+
+<!-- ==================== 13. FLOATING BUTTONS ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<div class="fc-floating">
+    <button class="fc-floating-btn fc-floating-btn-call" data-action="call" data-phone="+16477999973" data-tooltip="Call Now" aria-label="Call us">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+    </button>
+    <button class="fc-floating-btn fc-floating-btn-quote" data-action="open-quote" data-tooltip="Free Quote" aria-label="Get quote">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        </svg>
+    </button>
+</div>
+
+
+<!-- ==================== 14. MOBILE BAR ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<div class="fc-mobile-bar">
+    <button class="fc-mobile-bar-btn fc-mobile-bar-btn-call" data-action="call" data-phone="+16477999973">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        Call
+    </button>
+    <button class="fc-mobile-bar-btn fc-mobile-bar-btn-quote" data-action="open-quote">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        </svg>
+        Quote
+    </button>
+    <button class="fc-mobile-bar-btn fc-mobile-bar-btn-default" data-action="email" data-email="info@ficctv.ca">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        Email
+    </button>
+</div>
+
+
+<!-- ==================== 15. QUOTE MODAL ==================== -->
+<!-- PASTE THIS AS A CUSTOM HTML BLOCK -->
+
+<div class="fc-modal" id="fcQuoteModal" role="dialog" aria-modal="true">
+    <div class="fc-modal-backdrop"></div>
+    <div class="fc-modal-content">
+        <div class="fc-modal-header">
+            <h2 class="fc-modal-title">Get Your Free Quote</h2>
+            <button class="fc-modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="fc-modal-body">
+            <form id="fcQuoteForm" novalidate>
+                <div class="fc-form-success">
+                    <strong>Thank you!</strong> We'll contact you within 24 hours.
+                </div>
+
+                <div class="fc-form-group">
+                    <label class="fc-form-label required">Name</label>
+                    <input type="text" name="name" class="fc-form-input" placeholder="Your name" required>
+                    <div class="fc-form-error"></div>
+                </div>
+
+                <div class="fc-form-group">
+                    <label class="fc-form-label required">Phone</label>
+                    <input type="tel" name="phone" class="fc-form-input" placeholder="(647) 000-0000" required>
+                    <div class="fc-form-error"></div>
+                </div>
+
+                <div class="fc-form-group">
+                    <label class="fc-form-label">Email (Optional)</label>
+                    <input type="email" name="email" class="fc-form-input" placeholder="your@email.com">
+                    <div class="fc-form-error"></div>
+                </div>
+
+                <div class="fc-form-group">
+                    <label class="fc-form-label required">Service Needed</label>
+                    <select name="service" class="fc-form-select" required>
+                        <option value="">Select a service...</option>
+                        <option value="Residential CCTV">Residential CCTV</option>
+                        <option value="Commercial CCTV">Commercial CCTV</option>
+                        <option value="IP Camera Systems">IP Camera Systems</option>
+                        <option value="DVR/NVR Systems">DVR/NVR Systems</option>
+                        <option value="Night Vision Cameras">Night Vision Cameras</option>
+                        <option value="Remote Monitoring">Remote Monitoring Setup</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="fc-form-error"></div>
+                </div>
+
+                <div class="fc-form-group">
+                    <label class="fc-form-label required">City/Area</label>
+                    <input type="text" name="location" class="fc-form-input" placeholder="Toronto, ON" required>
+                    <div class="fc-form-error"></div>
+                </div>
+
+                <div class="fc-form-group">
+                    <label class="fc-form-label">Message (Optional)</label>
+                    <textarea name="message" class="fc-form-textarea" placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <div class="fc-form-group">
+                    <label class="fc-form-checkbox">
+                        <input type="checkbox" name="consent" required>
+                        <span class="text-gray-300 text-sm">I agree to be contacted by FICCTV</span>
+                    </label>
+                    <div class="fc-form-error"></div>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 rounded-full text-lg transition">
+                    Submit Request
+                </button>
+
+                <p class="text-center mt-4 text-gray-400 text-sm">
+                    Or call: <a href="tel:+16477999973" class="text-orange-500 font-semibold">647-799-9973</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== 16. JAVASCRIPT ==================== -->
+<!-- PASTE THIS AS THE LAST CUSTOM HTML BLOCK -->
+
+<script>
+(function() {
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Mobile Menu
+        var menuBtn = document.getElementById('mobileMenuBtn');
+        var mobileMenu = document.getElementById('mobileMenu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close on link click
+            mobileMenu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Phone Call
+        document.querySelectorAll('[data-action="call"]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var phone = this.getAttribute('data-phone') || '+16477999973';
+                window.location.href = 'tel:' + phone;
+            });
+        });
+
+        // Email
+        document.querySelectorAll('[data-action="email"]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var email = this.getAttribute('data-email') || 'info@ficctv.ca';
+                window.location.href = 'mailto:' + email;
+            });
+        });
+
+        // Modal
+        var modal = document.getElementById('fcQuoteModal');
+        var form = document.getElementById('fcQuoteForm');
+
+        function openModal() {
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (form) {
+                    form.reset();
+                    form.querySelectorAll('.fc-form-error').forEach(function(e) { e.classList.remove('active'); });
+                    var success = form.querySelector('.fc-form-success');
+                    if (success) success.classList.remove('active');
+                }
+            }
+        }
+
+        document.querySelectorAll('[data-action="open-quote"]').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+                var service = this.getAttribute('data-service');
+                if (service && form) {
+                    var select = form.querySelector('select[name="service"]');
+                    if (select) setTimeout(function() { select.value = service; }, 50);
+                }
+            });
+        });
+
+        if (modal) {
+            modal.querySelector('.fc-modal-close').addEventListener('click', closeModal);
+            modal.querySelector('.fc-modal-backdrop').addEventListener('click', closeModal);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModal();
+        });
+
+        // Form Submit
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var valid = true;
+                this.querySelectorAll('[required]').forEach(function(field) {
+                    var val = field.type === 'checkbox' ? field.checked : field.value.trim();
+                    var err = field.closest('.fc-form-group').querySelector('.fc-form-error');
+                    if (!val) {
+                        valid = false;
+                        if (err) { err.textContent = 'Required'; err.classList.add('active'); }
+                    } else {
+                        if (err) err.classList.remove('active');
+                    }
+                });
+
+                if (!valid) return;
+
+                var btn = this.querySelector('button[type="submit"]');
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+
+                setTimeout(function() {
+                    btn.disabled = false;
+                    btn.textContent = 'Submit Request';
+                    form.querySelector('.fc-form-success').classList.add('active');
+                    form.reset();
+                    setTimeout(closeModal, 2000);
+                }, 1500);
+            });
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.fc-faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.closest('.fc-faq-item');
+                var wasActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.fc-faq-item').forEach(function(i) {
+                    i.classList.remove('active');
+                });
+
+                // Toggle current
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var id = this.getAttribute('href');
+                if (id === '#') return;
+                var target = document.querySelector(id);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Stat counter animation
+        function animateCount(el, target) {
+            var current = 0;
+            var increment = target / 60;
+            var timer = setInterval(function() {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                el.textContent = Math.floor(current) + '+';
+            }, 16);
+        }
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting && !entry.target.dataset.counted) {
+                        entry.target.dataset.counted = 'true';
+                        var count = parseInt(entry.target.dataset.count);
+                        if (count) animateCount(entry.target, count);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.fc-stat-number[data-count]').forEach(function(el) {
+                observer.observe(el);
+            });
+        }
+
+    });
+})();
+</script>
